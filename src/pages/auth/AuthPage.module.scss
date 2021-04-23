@@ -1,0 +1,28 @@
+@import '../../styles/colors.scss';
+
+.AuthWrap {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background: $lightGray;
+
+  h2 {
+    font-size: 36px;
+    line-height: 0;
+    color: $blue;
+  }
+
+  .AuthForm {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .ErrorWrap {
+    position: relative;
+    display: block;
+  }
+}

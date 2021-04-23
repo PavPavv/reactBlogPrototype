@@ -1,0 +1,40 @@
+@import '../../styles/colors.scss';
+
+.Header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  background: $black;
+
+  .Logo {
+    letter-spacing: 3px;
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: $semiWhite;
+    transition: linear .3s;
+    cursor: pointer;
+
+    &:hover {
+      text-shadow: 1px 0px 1px $white;
+      color: $white;
+    }
+  }
+
+  .Logout {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: transparent url('../../assets/icons/logout.svg') no-repeat center center;
+    background-size: 29px;
+    cursor: pointer;
+    transition: .1s;
+
+    &:hover {
+      background: $white url('../../assets/icons/logout.svg') no-repeat center center;
+      background-size: 29px;
+    }
+  }
+
+}

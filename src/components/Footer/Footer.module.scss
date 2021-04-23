@@ -1,0 +1,17 @@
+@import '../../styles//colors.scss';
+
+.Footer {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 40px 20px;
+  background: $semiBlack;
+
+  p {
+    color: $white;
+  }
+
+  h5 {
+    color: $gray;
+  }
+}

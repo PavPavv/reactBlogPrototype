@@ -1,0 +1,22 @@
+@import '../../../styles/colors.scss';
+
+.SubmitButton {
+  width: 300px;
+  height: 38px;
+  border: 0;
+  border-radius: 3px;
+  font-size: 16px;
+  color: $white;
+  background: $blue;
+  cursor: pointer;
+  transition: .2s ease-in;
+
+  &:hover {
+    background: darken($blue, 10%);
+  }
+
+  &:disabled {
+    color: $black;
+    background: $gray;
+  }
+}

@@ -1,0 +1,10 @@
+@import '../../../styles/colors.scss';
+
+.InputError {
+  position: absolute;
+  top: 38px;
+  left: 0;
+  width: 300px;
+  font-size: 14px;
+  color: $red;
+}
