@@ -1,9 +1,6 @@
 import * as actionTypes from './types';
 import { fakeFetch } from '../../utils/storeUtils';
 
-
-export const EXPIRATION_TIME = 360000;
-
 export const authStart = () => {
   return {
     type: actionTypes.AUTH_START,
@@ -39,23 +36,23 @@ export const checkAuthTimeout = expirationTime => {
   }
 };
 
-export const authCheckState = () => {
-  return dispatch => {
-    const user = localStorage.getItem('fakeToken');
+// export const authCheckState = expirationTime => {
+//   return dispatch => {
+//     const user = localStorage.getItem('fakeToken');
 
-    if (user) {
-      const expirationDate = new Date(new Date().getTime() + EXPIRATION_TIME);
-      if (expirationDate > new Date()) {
-        dispatch(authSuccess());
-        checkAuthTimeout(expirationDate.getSeconds() - new Date().getSeconds());
-      } else {
-        dispatch(logout());
-      }
-    } else {
-      dispatch(logout());
-    }
-  }
-};
+//     if (user) {
+//       const expirationDate = new Date(new Date().getTime() + expirationTime);
+//       if (expirationDate > new Date()) {
+//         dispatch(authSuccess());
+//         checkAuthTimeout(expirationDate.getSeconds() - new Date().getSeconds());
+//       } else {
+//         dispatch(logout());
+//       }
+//     } else {
+//       dispatch(logout());
+//     }
+//   }
+// };
 
 export const auth = (login, password) => {
   return dispatch => {
@@ -69,10 +66,12 @@ export const auth = (login, password) => {
     fakeFetch(authData)
       .then(result => {
         const token = result.token;
+        const expirationTime = result.expires_in;
         if (token) {
           console.log('Success');
+          console.log(result);
           dispatch(authSuccess(token));
-          dispatch(checkAuthTimeout(EXPIRATION_TIME));
+          dispatch(checkAuthTimeout(expirationTime));
           localStorage.setItem('fakeToken', token);
         } else {
           console.log('>>>Error<<<');

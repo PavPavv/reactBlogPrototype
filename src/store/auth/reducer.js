@@ -5,6 +5,7 @@ const initialState = {
   loading: false,
   error: null,
   token: null,
+  isAuth: false,
 };
 
 //  Auth reducer's utilized functions for compact reducer's code
@@ -20,6 +21,7 @@ const authSuccess = (state, action) => {
     error: null,
     loading: false,
     token: action.token,
+    isAuth: true,
   });
 };
 
@@ -27,6 +29,7 @@ const authFail = (state, action) => {
   return updateObject(state, {
     error: action.error,
     loading: false,
+    isAuth: false,
   });
 };
 
@@ -34,6 +37,7 @@ const authLogout = (state, action) => {
   return updateObject(state, {
     token: null,
     loading: false,
+    isAuth: false,
   });
 };
 

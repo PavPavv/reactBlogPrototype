@@ -6,6 +6,12 @@ export const updateObject = (prevObj, nextObj) => {
 };
 
 export const fakeFetch = data => {
+  const generateRandomKey = () => {
+    const arr = ['Turing', 'Shannon', 'Atanasoff', 'Hewlett', 'Neumann', 'Zuse', 'Shockley', 'Kilby', 'Cerf', 'Torvalds', 'BernersLee', 'Brin']
+    let randomNum = Math.floor(10000000 + Math.random() * 90000000);
+    let randomName = arr[Math.floor(Math.random() * arr.length)];
+    return randomName + '.' + randomNum.toString();
+  };
   const L = 'admin';
   const P = '123456';
 
@@ -13,15 +19,16 @@ export const fakeFetch = data => {
     if (data.login === L && data.password === P) {
       setTimeout(() => {
         resolve({
-          token: 'goodToken',
+          token: generateRandomKey(),
+          expires_in: '3600000',
         });
-      }, 2500)
+      }, 800)
     } else {
       setTimeout(() => {
         resolve({
           message: 'FakeFetch error: bad credentials!',
         });
-      }, 2000)
+      }, 300)
     }
   });
 };

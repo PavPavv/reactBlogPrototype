@@ -1,14 +1,10 @@
+@import './colors.scss';
+
 .wrapper {
   max-width: 1200px;
   display: flex;
   flex-direction: column;
   min-height: 100%;
-}
-
-main {
-  max-width: 1200px;
-  min-height: 100%;
-  width: 80%;
   margin: 0 auto;
 }
 
@@ -16,4 +12,14 @@ footer {
   position: absolute;
   bottom: 0;
   left: 0;
+}
+
+a.active-a {
+  color: $blue;
+}
+
+@media (max-width: 1230px) {
+  .wrapper {
+    padding: 0 20px;
+  }
 }

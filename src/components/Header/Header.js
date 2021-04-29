@@ -5,6 +5,7 @@ import { useHistory } from 'react-router-dom';
 import styles from './Header.module.scss';
 
 import * as actions from '../../store/auth/actions';
+import NavMenu from '../NavMenu/NavMenu';
 
 const Header = () => {
   const dispatch = useDispatch();
@@ -16,10 +17,15 @@ const Header = () => {
   };
 
   return (
-    <div className={styles.Header}>
-      <div className={styles.Logo}>Logo</div>
-      <div className={styles.Logout} onClick={logout}></div>
-    </div>
+    <header className={styles.Header}>
+      <div className={styles.Left}>
+        <div className={styles.Logo}>Лого</div>
+        <NavMenu />
+      </div>
+      <div className={styles.Right}>
+        <div className={styles.Logout} onClick={logout}></div>
+      </div>
+    </header>
   )
 }
 

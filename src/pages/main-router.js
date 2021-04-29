@@ -1,16 +1,43 @@
 import React from 'react';
 import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
 
-import Auth from './auth/AuthPage';
-import Blog from './blog/BlogPage';
+import Layout from '../components/Layout/Layout';
+import AuthPage from './auth/AuthPage';
+import BlogPage from './blog/BlogPage';
+import TodosPage from './todos/TodosPage';
+import SmthElsePage from './smthElse/SmthElsePage';
+import NotFoundPage from './NotFound/NotFoundPage';
+
 
 const MainRouter = () => {
-  return (
+  const token = localStorage.getItem('fakeToken');
+
+
+  let routes = (
     <Switch>
-      <Route component={Blog} path="/" exact />
-      <Route component={Auth} path="/auth" exact />
+      <Route path="/auth" exact component={AuthPage} />
+      <Route path="/" exact component={BlogPage} />
       <Redirect to="/" />
     </Switch>
+  );
+
+  if (token) {
+    routes = (
+      <Layout>
+        <Switch>
+          <Route path="/" exact component={BlogPage} />
+          <Route path="/todos" exact component={TodosPage} />
+          <Route path="/smth-else" exact component={SmthElsePage} />
+          <Route component={NotFoundPage} />
+        </Switch>
+      </Layout>
+    );
+  }
+
+  return (
+    <div>
+      {routes}
+    </div>
   )
 }
 

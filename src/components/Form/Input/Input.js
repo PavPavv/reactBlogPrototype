@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import styles from './Input.module.scss';
 
-const Input = ({ id, name, type, onChange, onBlur, value }) => {
+const Input = ({ id, name, type, onChange, onBlur, value, placeholder }) => {
   return (
     <input
       className={styles.Input}
@@ -14,6 +14,7 @@ const Input = ({ id, name, type, onChange, onBlur, value }) => {
       onBlur={onBlur}
       value={value}
       autoComplete="off"
+      placeholder={placeholder}
     />
   );
 };
@@ -25,6 +26,7 @@ Input.propTypes = {
   onChange: PropTypes.func.isRequired,
   onBlur: PropTypes.func.isRequired,
   value: PropTypes.string.isRequired,
+  placeholder: PropTypes.string,
 }
 
 export default Input;

@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
+import { ToastContainer, toast } from 'react-toastify';
 
 import styles from './AuthPage.module.scss';
 
@@ -12,22 +13,28 @@ import SubmitButton from '../../components/Form/SubmitButton/SubmitButton';
 import * as actions from '../../store/auth/actions';
 
 const AuthPage = ({ history }) => {
-  //const token = useSelector(state => state.auth.token);
   const storageToken = localStorage.getItem('fakeToken')
   const { token, error, loading } = useSelector(state => state.auth);
   const dispatch = useDispatch();
+  const notify = () => toast.info("Это тестовый прототип, для входа воспользуйтесь данными: логин - admin, пароль - 123456");
   const validationRules = Yup.object({
     login: Yup.string()
-      .min(4, 'Must be at least 4 characters long')
-      .required('Please, enter login'),
+      .min(4, 'Логин должен состоять не менее, чем из 4 символов')
+      .required('Введите логин'),
     password: Yup.string()
-      .min(6, 'Must be at least 6 characters long')
-      .required('Please, enter password'),
+      .min(6, 'Логин должен состоять не менее, чем из 6 символов')
+      .required('Введите пароль'),
   });
 
   const checkValidation = async ({ login, password }) => {
     dispatch(actions.auth(login, password));
   };
+
+  useEffect(() => {
+    setTimeout(() => {
+      notify();
+    }, 1000);
+  }, [])
 
   useEffect(() => {
     if (storageToken) {
@@ -54,7 +61,7 @@ const AuthPage = ({ history }) => {
   });
   return (
     <div className={styles.AuthWrap}>
-      <h2>Enter</h2>
+      <h2>Вход</h2>
       <form
         className={styles.AuthForm}
         onSubmit={formik.handleSubmit}
@@ -68,11 +75,12 @@ const AuthPage = ({ history }) => {
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
             value={formik.values.login}
+            placeholder="Логин"
           />
           {formik.touched.login && formik.errors.login ? (
             <InputError>{formik.errors.login}</InputError>
           ) : null}
-          {formik.touched.login && error && !formik.errors.login ? (<InputError>Incorrect email or password.</InputError>) : null}
+          {formik.touched.login && error && !formik.errors.login ? (<InputError>Вы ввели неправильный логин или пароль</InputError>) : null}
         </div>
 
 
@@ -84,14 +92,16 @@ const AuthPage = ({ history }) => {
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
             value={formik.values.password}
+            placeholder="Пароль"
           />
           {formik.touched.password && formik.errors.password ? (
             <InputError>{formik.errors.password}</InputError>
           ) : null}
-          {formik.touched.password && error && !formik.errors.password ? (<InputError>Incorrect email or password.</InputError>) : null}
+          {formik.touched.password && error && !formik.errors.password ? (<InputError>Вы ввели неправильный логин или пароль</InputError>) : null}
         </div>
 
-        <SubmitButton>Log In</SubmitButton>
+        <SubmitButton>Войти</SubmitButton>
+        <ToastContainer />
       </form>
       {loading && <Loader />}
     </div>
