@@ -5,7 +5,7 @@ import Layout from '../components/Layout/Layout';
 import AuthPage from './auth/AuthPage';
 import BlogPage from './blog/BlogPage';
 import TodosPage from './todos/TodosPage';
-import SmthElsePage from './smthElse/SmthElsePage';
+import FormPage from './form/FormPage';
 import NotFoundPage from './NotFound/NotFoundPage';
 
 
@@ -27,7 +27,7 @@ const MainRouter = () => {
         <Switch>
           <Route path="/" exact component={BlogPage} />
           <Route path="/todos" exact component={TodosPage} />
-          <Route path="/smth-else" exact component={SmthElsePage} />
+          <Route path="/form" exact component={FormPage} />
           <Route component={NotFoundPage} />
         </Switch>
       </Layout>

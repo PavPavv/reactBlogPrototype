@@ -13,18 +13,8 @@
   }
 
   .Logo {
-    letter-spacing: 3px;
-    font-size: 20px;
-    font-weight: bold;
-    text-transform: uppercase;
-    color: $semiWhite;
-    transition: linear .3s;
-    cursor: pointer;
-
-    &:hover {
-      text-shadow: 1px 0px 1px $white;
-      color: $white;
-    }
+    width: 30px;
+    height: 30px;
   }
 
   .Logout {

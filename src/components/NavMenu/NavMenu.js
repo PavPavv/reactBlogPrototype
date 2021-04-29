@@ -13,7 +13,7 @@ const NavMenu = () => {
         <NavLink activeClassName="active-a" exact to="/todos">Список дел</NavLink>
       </li>
       <li>
-        <NavLink activeClassName="active-a" exact to="/smth-else">Что-то ещё</NavLink>
+        <NavLink activeClassName="active-a" exact to="/form">Форма</NavLink>
       </li>
     </ul>
   )

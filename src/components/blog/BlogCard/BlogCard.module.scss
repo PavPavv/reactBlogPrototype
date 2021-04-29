@@ -1,0 +1,32 @@
+@import '../../../styles/colors.scss';
+
+.Card {
+  padding: 20px;
+  border: 1px solid $gray;
+  border-radius: 6px;
+  transition: .2s ease-in;
+  
+  &:hover {
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+  }
+
+  .Tag {
+    font-weight: bold;
+    font-size: 20px;
+    font-family: 'Noto Sans', sans-serif;
+    color: $blue;
+
+  }
+
+  .Title {
+    margin-top: 10px;
+    font-size: 18px;
+    font-family: 'Noto Sans', sans-serif;
+  }
+
+  .Text {
+    font-size: 14px;
+    margin-top: 25px;
+    font-family: 'Noto Sans', sans-serif;
+  }
+}

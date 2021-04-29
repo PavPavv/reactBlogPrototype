@@ -2,12 +2,12 @@ import React, { Fragment } from 'react';
 
 import PageTitle from '../../components/PageTitle/PageTitle';
 
-const TodosPage = ({ history }) => {
+const FormPage = () => {
   return (
     <>
-      <PageTitle title="Список дел" />
+      <PageTitle title="Форма" />
     </>
   )
 }
 
-export default TodosPage;
+export default FormPage;

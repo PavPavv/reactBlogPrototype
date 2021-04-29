@@ -8,3 +8,9 @@
   font-size: 14px;
   color: $red;
 }
+
+@media (max-width: 1600px) {
+  .InputError {
+    font-size: 13px;
+  }
+}
