@@ -1,4 +1,4 @@
-@import '../../styles/colors.scss';
+@import '../../../styles/colors.scss';
 
 .Header {
   display: flex;
@@ -21,13 +21,13 @@
     width: 28px;
     height: 28px;
     border-radius: 50%;
-    background: transparent url('../../assets/icons/logout.svg') no-repeat center center;
+    background: transparent url('../../../assets/icons/logout.svg') no-repeat center center;
     background-size: 29px;
     cursor: pointer;
     transition: .1s;
 
     &:hover {
-      background: $white url('../../assets/icons/logout.svg') no-repeat center center;
+      background: $white url('../../../assets/icons/logout.svg') no-repeat center center;
       background-size: 29px;
     }
   }

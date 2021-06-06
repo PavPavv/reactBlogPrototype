@@ -1,0 +1,19 @@
+@import '../../../styles/colors.scss';
+
+.Search {
+  width: 100%;
+}
+
+.Search input {
+  width: 100%;
+  border: 0;
+  border-bottom: 1px solid $gray;
+  padding: 10px 40px 10px 0;
+  background: url('../../../assets/icons/search.svg') no-repeat right 15px center;
+  background-size: 20px;
+  outline: none;
+}
+
+.Search input:focus {
+  border-bottom: 1px solid $black;
+}

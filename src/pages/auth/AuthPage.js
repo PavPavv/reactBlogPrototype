@@ -6,10 +6,10 @@ import { ToastContainer, toast } from 'react-toastify';
 
 import styles from './AuthPage.module.scss';
 
-import Loader from '../../components/Loader/Loader';
-import Input from '../../components/Form/Input/Input';
-import InputError from '../../components/Form/InputError/InputError';
-import SubmitButton from '../../components/Form/SubmitButton/SubmitButton';
+import Loader from '../../components/ui/Loader/Loader';
+import InputForm from '../../components/ui/Form/InputForm/InputForm';
+import InputError from '../../components/ui/Form/InputError/InputError';
+import SubmitButton from '../../components/ui/Form/SubmitButton/SubmitButton';
 import * as actions from '../../store/auth/actions';
 
 const AuthPage = ({ history }) => {
@@ -68,7 +68,7 @@ const AuthPage = ({ history }) => {
       >
 
         <div className={styles.ErrorWrap}>
-          <Input
+          <InputForm
             id="login"
             name="login"
             type="text"
@@ -85,7 +85,7 @@ const AuthPage = ({ history }) => {
 
 
         <div className={styles.ErrorWrap}>
-          <Input
+          <InputForm
             id="password"
             name="password"
             type="password"

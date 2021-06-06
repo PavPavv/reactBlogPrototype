@@ -1,12 +1,12 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { useHistory } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 
-import * as actions from '../../store/auth/actions';
+import * as actions from '../../../store/auth/actions';
 import NavMenu from '../NavMenu/NavMenu';
 
 import styles from './Header.module.scss';
-import logo from '../../assets/logo.png';
+import logo from '../../../assets/logo.png';
 
 const Header = () => {
   const dispatch = useDispatch();
@@ -20,7 +20,9 @@ const Header = () => {
   return (
     <header className={styles.Header}>
       <div className={styles.Left}>
-        <img alt="Лого" src={logo} className={styles.Logo} />
+        <Link to="/">
+          <img alt="Лого" src={logo} className={styles.Logo} />
+        </Link>
         <NavMenu />
       </div>
       <div className={styles.Right}>

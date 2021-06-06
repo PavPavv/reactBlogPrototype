@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-import PageTitle from '../../components/PageTitle/PageTitle';
-import BlogCard from '../../components/blog/BlogCard/BlogCard';
-import Loader from '../../components/Loader/Loader';
+import BlogSearch from '../../components/blog/BlogSearch/BlogSearch';
+import PageTitle from '../../components/ui/PageTitle/PageTitle';
+import Loader from '../../components/ui/Loader/Loader';
 
 import styles from './BlogPage.module.scss'
 
@@ -34,9 +34,9 @@ const BlogPage = ({ history }) => {
   return (
     <>
       <PageTitle title="Блог" />
-      <div>поиск</div>
       <div>фильтры</div>
-      <div className={styles.Posts}>
+      <BlogSearch details={data} />
+      {/* <div className={styles.Posts}>
         {!loading && data && data.length > 0
           ? data.map(item => {
             return <BlogCard key={item.id}
@@ -46,7 +46,7 @@ const BlogPage = ({ history }) => {
             />
           })
           : <div>Нет постов</div>}
-      </div>
+      </div> */}
       {loading && <Loader />}
     </>
   )

@@ -2,11 +2,16 @@
 
 .Card {
   padding: 20px;
-  border: 1px solid $gray;
+  border: 0;
   border-radius: 6px;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
   transition: .2s ease-in;
+  background: $yellow;
+  transform: rotate(5deg);
   
   &:hover {
+    z-index: 10;
+    transform: rotate(0deg);
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
   }
 

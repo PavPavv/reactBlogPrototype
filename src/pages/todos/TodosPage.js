@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 
-import PageTitle from '../../components/PageTitle/PageTitle';
+import PageTitle from '../../components/ui/PageTitle/PageTitle';
 
 const TodosPage = ({ history }) => {
   return (

@@ -1,12 +1,12 @@
 import React from 'react';
 import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
 
-import Layout from '../components/Layout/Layout';
+import Layout from '../components/ui/Layout/Layout';
 import AuthPage from './auth/AuthPage';
 import BlogPage from './blog/BlogPage';
 import TodosPage from './todos/TodosPage';
 import FormPage from './form/FormPage';
-import NotFoundPage from './NotFound/NotFoundPage';
+import NotFoundPage from './notFound/NotFoundPage';
 
 
 const MainRouter = () => {

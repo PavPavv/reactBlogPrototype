@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import styles from './Input.module.scss';
+import styles from './InputForm.module.scss';
 
-const Input = ({ id, name, type, onChange, onBlur, value, placeholder }) => {
+const InputForm = ({ id, name, type, onChange, onBlur, value, placeholder }) => {
   return (
     <input
       className={styles.Input}
@@ -19,7 +19,7 @@ const Input = ({ id, name, type, onChange, onBlur, value, placeholder }) => {
   );
 };
 
-Input.propTypes = {
+InputForm.propTypes = {
   id: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   type: PropTypes.string.isRequired,
@@ -29,4 +29,4 @@ Input.propTypes = {
   placeholder: PropTypes.string,
 }
 
-export default Input;
+export default InputForm;

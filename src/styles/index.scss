@@ -1,3 +1,5 @@
+@import './colors.scss';
+
 body {
   margin: 0;
   padding: 0;
@@ -26,4 +28,158 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+}
+
+// restyle Ant Design styles
+.ant-tabs-nav-list {
+  display: flex;
+  border-bottom: 1px solid rgba(0,0,0,.2);
+}
+
+.ant-tabs-tab {
+  position: relative;
+  width: 140px!important;
+  height: 60px!important;
+  padding: 30px 10px 10px 10px;
+  text-align: center; 
+  color: $black;
+  transition: ease-in .2s!important;
+  cursor: pointer;
+}
+
+.ant-tabs-tab:first-child:before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: -10px;
+  left: calc(50% - 15px);
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: $blue;
+}
+
+.ant-tabs-tab:nth-child(2):before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: -10px;
+  left: calc(50% - 15px);
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: $blue;
+}
+
+.ant-tabs-tab:nth-child(3):before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: -10px;
+  left: calc(50% - 15px);
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: $blue;
+}
+
+.ant-tabs-tab:nth-child(4):before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: -10px;
+  left: calc(50% - 15px);
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: $blue;
+}
+
+.ant-tabs-tab:nth-child(5):before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: -10px;
+  left: calc(50% - 15px);
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: $blue;
+}
+
+
+.ant-tabs-tab.ant-tabs-tab-disabled:first-child:before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: -10px;
+  left: calc(50% - 15px);
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: $gray;
+}
+
+.ant-tabs-tab.ant-tabs-tab-disabled:nth-child(2):before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: -10px;
+  left: calc(50% - 15px);
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: $gray;
+}
+
+.ant-tabs-tab.ant-tabs-tab-disabled:nth-child(3):before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: -10px;
+  left: calc(50% - 15px);
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: $gray;
+}
+
+.ant-tabs-tab.ant-tabs-tab-disabled:nth-child(4):before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: -10px;
+  left: calc(50% - 15px);
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: $gray;
+}
+
+.ant-tabs-tab.ant-tabs-tab-disabled:nth-child(5):before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: -10px;
+  left: calc(50% - 15px);
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: $gray;
+}
+
+
+.ant-tabs-tab.ant-tabs-tab-active {
+  border-bottom: 2px solid $blue;
+}
+
+.ant-tabs-tab.ant-tabs-tab-disabled {
+  color: $gray!important;
+}
+
+.ant-tabs-tab-btn {
+  font-size: 14px;
+  font-weight: bold;
+  outline: none;
+  cursor: pointer;
 }
