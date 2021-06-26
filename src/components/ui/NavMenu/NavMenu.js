@@ -15,6 +15,9 @@ const NavMenu = () => {
       <li>
         <NavLink activeClassName="active-a" exact to="/form">Форма</NavLink>
       </li>
+      <li>
+        <NavLink activeClassName="active-a" exact to="/class">Класс!</NavLink>
+      </li>
     </ul>
   )
 }

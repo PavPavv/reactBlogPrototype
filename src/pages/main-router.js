@@ -6,6 +6,7 @@ import AuthPage from './auth/AuthPage';
 import BlogPage from './blog/BlogPage';
 import TodosPage from './todos/TodosPage';
 import FormPage from './form/FormPage';
+import ClassPage from './class/ClassPage';
 import NotFoundPage from './notFound/NotFoundPage';
 
 
@@ -28,6 +29,7 @@ const MainRouter = () => {
           <Route path="/" exact component={BlogPage} />
           <Route path="/todos" exact component={TodosPage} />
           <Route path="/form" exact component={FormPage} />
+          <Route path="/class" exact component={ClassPage} />
           <Route component={NotFoundPage} />
         </Switch>
       </Layout>

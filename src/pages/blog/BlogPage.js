@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
+import BlogFilter from '../../components/blog/BlogFilter/BlogFilter';
 import BlogSearch from '../../components/blog/BlogSearch/BlogSearch';
 import PageTitle from '../../components/ui/PageTitle/PageTitle';
 import Loader from '../../components/ui/Loader/Loader';
@@ -34,19 +35,8 @@ const BlogPage = ({ history }) => {
   return (
     <>
       <PageTitle title="Блог" />
-      <div>фильтры</div>
+      <BlogFilter details={data} />
       <BlogSearch details={data} />
-      {/* <div className={styles.Posts}>
-        {!loading && data && data.length > 0
-          ? data.map(item => {
-            return <BlogCard key={item.id}
-              tag={item.userId}
-              title={item.title}
-              text={item.body}
-            />
-          })
-          : <div>Нет постов</div>}
-      </div> */}
       {loading && <Loader />}
     </>
   )

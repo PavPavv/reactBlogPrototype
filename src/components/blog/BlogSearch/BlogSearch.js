@@ -25,7 +25,7 @@ const BlogSearch = ({ details }) => {
     <div className={styles.Search}>
       <input
         type="text"
-        placeholder="Начните печатать, чтобы найти"
+        placeholder="Печатать, чтобы найти"
         onChange={handleChange}
       />
       <SearchList filtered={filteredItems} />

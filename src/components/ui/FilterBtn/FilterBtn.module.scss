@@ -1,0 +1,39 @@
+@import '../../../styles/colors.scss';
+
+.BtnActive {
+  margin-right: 10px;
+  padding: 7px 12px;
+  border-radius: 16px;
+  font-size: 12px;
+  color: $white;
+  background: $blue;
+  cursor: pointer;
+  transition: .1s ease-in;
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  &:hover {
+    background: $darkBlue;
+  }
+}
+
+.Btn {
+  margin-right: 10px;
+  padding: 7px 12px;
+  border-radius: 16px;
+  font-size: 12px;
+  color: $black;
+  background: $gray;
+  cursor: pointer;
+  transition: .1s ease-in;
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  &:hover {
+    color: $black;
+  }
+}
