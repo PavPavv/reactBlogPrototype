@@ -5,10 +5,12 @@ import BlogFilter from '../../components/blog/BlogFilter/BlogFilter';
 import BlogSearch from '../../components/blog/BlogSearch/BlogSearch';
 import PageTitle from '../../components/ui/PageTitle/PageTitle';
 import Loader from '../../components/ui/Loader/Loader';
+import Box from '../../components/ui/Box/Box';
 
 import styles from './BlogPage.module.scss'
 
 const BlogPage = ({ history }) => {
+  const [initialData, setInitialData] = useState([]);
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
   const token = localStorage.getItem('fakeToken');
@@ -25,6 +27,7 @@ const BlogPage = ({ history }) => {
       .then(res => {
         setData(res.data);
         setLoading(false);
+        setInitialData(res.data);
       })
       .catch(err => {
         setLoading(false);
@@ -35,8 +38,16 @@ const BlogPage = ({ history }) => {
   return (
     <>
       <PageTitle title="Блог" />
-      <BlogFilter details={data} />
-      <BlogSearch details={data} />
+      <Box pb={50}>
+        <BlogFilter
+          initials={initialData}
+          filterData={setData}
+          mainData={data}
+        />
+      </Box>
+      <Box>
+        <BlogSearch details={data} />
+      </Box>
       {loading && <Loader />}
     </>
   )
