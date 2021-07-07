@@ -32,3 +32,10 @@ export const fakeFetch = data => {
     }
   });
 };
+
+export const fakePhoto = () => {
+  //https://jsonplaceholder.typicode.com/photos?id=1
+
+  let randomId = Math.round(Math.random() * 1000);
+  return randomId;
+};

@@ -1,0 +1,59 @@
+@import '../../../../styles/colors.scss';
+
+.Post {
+
+  .Header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+
+    .Tag {
+      font-weight: bold;
+    }
+
+    .Close {
+      width: 25px;
+      height: 25px;
+      background: url('https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-close-512.png') no-repeat center center;
+      background-size: contain;
+      cursor: pointer;
+    }
+  }
+
+  .Title {
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  .Image {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    max-height: 300px;
+    margin-top: 20px;
+
+    img {
+      max-width: 100%;
+      max-height: 300px;
+    }
+  }
+
+  .Footer {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+
+    .Time {
+      font-size: 12px;
+
+    }
+  }
+
+  .NoPosts {
+    margin-top: 200px;
+    font-size: 14px;
+    text-align: center;
+    color: $semiBlack;
+  }
+}

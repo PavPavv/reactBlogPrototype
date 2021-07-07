@@ -42,7 +42,7 @@ const FilterBtn = ({ item, initialDt, mainData, filterData }) => {
 
   return (
     <div className={active ? styles.BtnActive : styles.Btn} onClick={handleFilter}>
-      Фильтр {item}
+      #тег {item}
     </div>
   )
 };

@@ -1,0 +1,22 @@
+.BlogWrapper {
+  display: flex;
+}
+
+.Left {
+  min-width: 500px;
+  width: 40%;
+}
+
+.Right {
+  position: fixed;
+  top: 77px;
+  right: 0;
+  width: 60%;
+  height: 100vh;
+}
+
+@media (max-width: 1200px) {
+  .Right {
+    width: calc(100% - 500px);
+  }
+}

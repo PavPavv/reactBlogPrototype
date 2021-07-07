@@ -1,37 +1,99 @@
 @import '../../../styles/colors.scss';
 
 .Card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 120px;
+  margin-bottom: 10px;
   padding: 20px;
   border: 0;
   border-radius: 6px;
   box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
   transition: .2s ease-in;
   background: $yellow;
-  transform: rotate(5deg);
+  cursor: pointer;
   
   &:hover {
     z-index: 10;
-    transform: rotate(0deg);
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
   }
 
   .Tag {
     font-weight: bold;
-    font-size: 20px;
+    font-size: 17px;
     font-family: 'Noto Sans', sans-serif;
     color: $blue;
 
   }
 
   .Title {
-    margin-top: 10px;
-    font-size: 18px;
+    max-width: 540px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    font-size: 16px;
+    font-weight: bold;
     font-family: 'Noto Sans', sans-serif;
   }
 
   .Text {
-    font-size: 14px;
-    margin-top: 25px;
+    max-width: 540px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    font-size: 12px;
     font-family: 'Noto Sans', sans-serif;
+    max-width: 540px;
+  }
+}
+
+.CardActive {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 120px;
+  margin-bottom: 10px;
+  padding: 20px;
+  border: 0;
+  border-radius: 6px;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+  transition: .2s ease-in;
+  background: $blue;
+  cursor: pointer;
+  
+  &:hover {
+    z-index: 10;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+  }
+
+  .Tag {
+    font-weight: bold;
+    font-size: 17px;
+    font-family: 'Noto Sans', sans-serif;
+    color: $white;
+
+  }
+
+  .Title {
+    max-width: 540px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: 'Noto Sans', sans-serif;
+    color: $white;
+  }
+
+  .Text {
+    max-width: 540px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    font-size: 12px;
+    font-family: 'Noto Sans', sans-serif;
+    max-width: 540px;
+    color: $white;
   }
 }

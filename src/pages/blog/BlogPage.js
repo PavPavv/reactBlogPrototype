@@ -4,6 +4,7 @@ import axios from 'axios';
 import BlogFilter from '../../components/blog/BlogFilter/BlogFilter';
 import BlogSearch from '../../components/blog/BlogSearch/BlogSearch';
 import PageTitle from '../../components/ui/PageTitle/PageTitle';
+import BlogRight from '../../components/blog/BlogRight/BlogRight';
 import Loader from '../../components/ui/Loader/Loader';
 import Box from '../../components/ui/Box/Box';
 
@@ -38,16 +39,23 @@ const BlogPage = ({ history }) => {
   return (
     <>
       <PageTitle title="Блог" />
-      <Box pb={50}>
-        <BlogFilter
-          initials={initialData}
-          filterData={setData}
-          mainData={data}
-        />
-      </Box>
-      <Box>
-        <BlogSearch details={data} />
-      </Box>
+      <div className={styles.BlogWrapper}>
+        <div className={styles.Left}>
+          <Box pb={50}>
+            <BlogFilter
+              initials={initialData}
+              filterData={setData}
+              mainData={data}
+            />
+          </Box>
+          <Box>
+            <BlogSearch details={data} />
+          </Box>
+        </div>
+        <div className={styles.Right}>
+          <BlogRight />
+        </div>
+      </div>
       {loading && <Loader />}
     </>
   )
