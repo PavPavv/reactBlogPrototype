@@ -1,0 +1,30 @@
+.Todo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  border: 1px solid red;
+  padding: 5px 15px;
+
+  .Right {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    & div {
+      margin-right: 10px;
+    }
+
+    .Done {
+      cursor: pointer;
+    }
+
+    .Edit {
+      cursor: pointer;
+    }
+
+    .Remove {
+      cursor: pointer;
+    }
+  }
+}

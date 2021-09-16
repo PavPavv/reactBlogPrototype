@@ -3,12 +3,14 @@ import { useSelector, useDispatch } from 'react-redux';
 import axios from 'axios';
 
 import * as actions from '../../../../store/post/actions';
+import Loader from '../../../ui/Loader/Loader';
 
 import styles from './Post.module.scss';
 
 const Post = () => {
   const dispatch = useDispatch();
   let postData = useSelector(state => state.post);
+  const loading = useSelector(state => state.post.loading);
   const date = new Date(Date.now() - 24 * 3600 * 1000);
   const [img, setImg] = useState('');
   let post = <div className={styles.NoPosts}>Ничего не выбрано</div>;
@@ -54,7 +56,7 @@ const Post = () => {
   }
 
   return (
-    <div className={styles.Post}>{post}</div>
+    <div className={styles.Post}>{loading ? <Loader /> : post}</div>
   )
 }
 

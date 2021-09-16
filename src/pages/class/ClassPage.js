@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 
 import PageTitle from '../../components/ui/PageTitle/PageTitle';
+import ClassHocTest from '../../utils/HOC/testsComponents/classHocTest';
+import FuncHocTest from '../../utils/HOC/testsComponents/funcHocTest';
+import Clock from '../../components/class/Clock/Clock';
 
 // import styles from './ClassPage.module.scss';
 
@@ -42,7 +45,12 @@ class ClassPage extends Component {
   render() {
     //console.log('render')
     return (
-      <PageTitle title="Класс" />
+      <>
+        <PageTitle title="Класс" />
+        <ClassHocTest />
+        <FuncHocTest />
+        <Clock />
+      </>
     );
   }
 }

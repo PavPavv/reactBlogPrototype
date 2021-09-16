@@ -1,0 +1,26 @@
+@import '../../../styles/colors.scss';
+
+.TodoAdd {
+  display: flex;
+
+  input {
+    width: 100%;
+    padding: 12px 15px;
+    font-size: 18px;
+    outline: none;
+  }
+
+  button {
+    border: 0;
+    padding: 7px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: $white;
+    background: $blue;
+    cursor: pointer;
+
+    &:hover {
+      background: $darkBlue;
+    }
+  }
+}

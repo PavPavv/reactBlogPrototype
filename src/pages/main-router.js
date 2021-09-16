@@ -7,6 +7,7 @@ import BlogPage from './blog/BlogPage';
 import TodosPage from './todos/TodosPage';
 import FormPage from './form/FormPage';
 import ClassPage from './class/ClassPage';
+import CustomPage from './custom/CustomPage';
 import NotFoundPage from './notFound/NotFoundPage';
 
 
@@ -30,6 +31,7 @@ const MainRouter = () => {
           <Route path="/todos" exact component={TodosPage} />
           <Route path="/form" exact component={FormPage} />
           <Route path="/class" exact component={ClassPage} />
+          <Route path="/custom" exact component={CustomPage} />
           <Route component={NotFoundPage} />
         </Switch>
       </Layout>

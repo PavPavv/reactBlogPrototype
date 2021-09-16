@@ -18,6 +18,9 @@ const NavMenu = () => {
       <li>
         <NavLink activeClassName="active-a" exact to="/class">Класс!</NavLink>
       </li>
+      <li>
+        <NavLink activeClassName="active-a" exact to="/custom">Кастомные хуки</NavLink>
+      </li>
     </ul>
   )
 }
